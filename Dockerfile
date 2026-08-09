@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:stable-slim
 
 MAINTAINER Philippe Le Van (@plv on twitter)
 
