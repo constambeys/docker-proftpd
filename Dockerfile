@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:stable-slim
 
 MAINTAINER Philippe Le Van (@plv on twitter)
 
@@ -15,6 +15,7 @@ RUN sed -i "s/#LoadModule mod_tls.c/LoadModule mod_tls.c/" /etc/proftpd/modules.
 EXPOSE 20 21
 
 ADD docker-entrypoint.sh /usr/local/sbin/docker-entrypoint.sh
+RUN chmod +x /usr/local/sbin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/local/sbin/docker-entrypoint.sh"]
 
 CMD ["proftpd", "--nodaemon"]
